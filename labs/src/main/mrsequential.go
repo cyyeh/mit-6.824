@@ -90,16 +90,25 @@ func main() {
 // load the application Map and Reduce functions
 // from a plugin file, e.g. ../mrapps/wc.so
 //
+// https://github.com/vladimirvivien/go-plugin-example
 func loadPlugin(filename string) (func(string, string) []mr.KeyValue, func(string, []string) string) {
+	// load module
+	// 1. open the so file to load the symbols
 	p, err := plugin.Open(filename)
 	if err != nil {
 		log.Fatalf("cannot load plugin %v", filename)
 	}
+	// 2. look up a symbol (an exported function or variable)
+	// in this case, function Map
 	xmapf, err := p.Lookup("Map")
 	if err != nil {
 		log.Fatalf("cannot find Map in %v", filename)
 	}
+	// 3. Assert that loaded symbol is of a desired type
+	// in this case: Map function
 	mapf := xmapf.(func(string, string) []mr.KeyValue)
+
+
 	xreducef, err := p.Lookup("Reduce")
 	if err != nil {
 		log.Fatalf("cannot find Reduce in %v", filename)
