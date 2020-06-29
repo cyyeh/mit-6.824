@@ -291,3 +291,8 @@
 - These were good trade-offs in practice.
 - We'll see some more advanced successors later in the course.
 - Have fun with the lab!
+
+
+#### References
+
+- [Jeff Dean: Building Large-Scale Internet Services](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/44877.pdf)
