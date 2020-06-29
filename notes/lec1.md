@@ -279,8 +279,8 @@
 #### Current status?
 - Hugely influential (Hadoop, Spark, &c).
 - Probably no longer in use at Google.
-    - Replaced by Flume / FlumeJava (see paper by Chambers et al).
-    - GFS replaced by Colossus (no good description), and BigTable.
+    - Replaced by Flume / [FlumeJava](https://research.google/pubs/pub35650/) (see paper by Chambers et al).
+    - GFS replaced by [Colossus](https://www.systutorials.com/colossus-successor-to-google-file-system-gfs/) (no good description), and BigTable.
 
 
 #### Conclusion
