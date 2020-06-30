@@ -2,7 +2,7 @@
 
 ## Lecture Video
 
-{%youtube gA4YXUJX7t8 %}}
+{%youtube gA4YXUJX7t8 %}
 
 ## Lecture Notes
 
@@ -61,15 +61,15 @@
     - e.g. what if two threads do `n = n + 1` at the same time? 
     - or one thread reads while another increments?
     - this is a "race" -- and is usually a bug
-        - use locks (Go's sync.Mutex)
+        - use locks (Go's `sync.Mutex`)
         - or avoid sharing mutable data
 - coordination between threads
     - e.g. one thread is producing data, another thread is consuming it
     - how can the consumer wait (and release the CPU)?
     - how can the producer wake up the consumer?
-    - use Go channels or sync.Cond or WaitGroup
+    - use Go `channels` or `sync.Cond` or `WaitGroup`
 - deadlock
-    - cycles via locks and/or communication (e.g. RPC or Go channels)
+    - cycles via locks and/or communication (e.g. `RPC` or Go `channels`)
 
 ---
 
@@ -115,11 +115,11 @@ func Serial(url string, fetcher Fetcher, fetched map[string]bool) {
 	return
 }
 ```
-- performs depth-first exploration via recursive Serial calls
-- the "fetched" map avoids repeats, breaks cycles
+- performs depth-first exploration via recursive `Serial` calls
+- the `fetched` map avoids repeats, breaks cycles
     - a single map, passed by reference, caller sees callee's updates
 - but: fetches only one page at a time
-    - can we just put a "go" in front of the Serial() call?
+    - can we just put a "go" in front of the `Serial()`` call?
     - let's try it... what happened?
 
 ### ConcurrentMutex crawler:
