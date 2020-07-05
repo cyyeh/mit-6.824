@@ -1,5 +1,7 @@
 # MIT 6.824: Lecture 2, RPC and threads
 
+###### tags: `mit-6.824`
+
 ## Lecture Video
 
 {%youtube gA4YXUJX7t8 %}
