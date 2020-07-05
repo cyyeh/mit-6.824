@@ -1,5 +1,7 @@
 # MIT 6.824: Lecture 1, Introduction
 
+###### tags: `mit-6.824`
+
 ## Lecture Video
 
 {%youtube cQP8WApzIQQ %}
